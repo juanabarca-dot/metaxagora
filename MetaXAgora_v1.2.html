@@ -1,0 +1,603 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <link rel="icon" type="image/svg+xml" href="favicon.svg"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Colocation y Centros de Datos en México | MetaXAgora</title>
+  <meta name="description" content="Infraestructura de colocation mayorista en México. Potencia garantizada, conectividad y seguridad física. Para empresas, cloud players y operadores de colocation."/>
+  <meta name="keywords" content="colocation México, data center colocation, wholesale colocation México, capacidad de cómputo México, infraestructura de cómputo, alquiler de data center, espacio de servidores México"/>
+  <link rel="canonical" href="https://www.metaxagora.com/"/>
+  <meta name="robots" content="index, follow"/>
+  <meta property="og:title" content="MetaXAgora"/>
+  <meta property="og:description" content="Compute power, on demand."/>
+  <meta property="og:type" content="website"/>
+  <meta property="og:url" content="https://www.metaxagora.com"/>
+  <meta property="og:locale" content="en_US"/>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "MetaXAgora",
+    "url": "https://www.metaxagora.com",
+    "description": "Wholesale colocation infrastructure in Mexico — guaranteed power, connectivity, cooling and physical security.",
+    "areaServed": { "@type": "Country", "name": "Mexico" },
+    "parentOrganization": { "@type": "Organization", "name": "Metaxium Group", "url": "https://www.metaxium.com" }
+  }
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;700&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css"/>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --dark:#1A0A3A; --darker:#0F0620; --purple:#5B21B6; --light:#A78BFA; --pbg:#EDE9FE;
+      --b:rgba(255,255,255,0.07); --bm:rgba(255,255,255,0.14);
+      --fh:'Space Grotesk',sans-serif; --fb:'DM Sans',sans-serif;
+    }
+    html { scroll-behavior: smooth; }
+    body { font-family:var(--fb); color:#fff; background:var(--darker); line-height:1.6; -webkit-font-smoothing:antialiased; }
+
+    nav { position:fixed; top:0; left:0; right:0; z-index:100; display:flex; justify-content:space-between; align-items:center; padding:18px 5%; background:rgba(15,6,32,0.90); backdrop-filter:blur(12px); border-bottom:1px solid var(--b); }
+    .nav-logo { display:flex; align-items:center; gap:10px; text-decoration:none; }
+    .nav-logo-icon { width:32px; height:32px; border-radius:7px; background:#2D0F5C; display:flex; align-items:center; justify-content:center; }
+    .nav-logo-icon svg { width:32px; height:32px; }
+    .nav-wordmark { font-family:var(--fh); font-size:18px; font-weight:700; color:#fff; letter-spacing:-0.3px; }
+    .nav-wordmark .x { color:var(--light); }
+    .nav-right { display:flex; align-items:center; gap:20px; }
+    .nav-right a { font-size:13px; color:rgba(255,255,255,0.45); text-decoration:none; transition:color .15s; }
+    .nav-right a:hover { color:#fff; }
+    .nav-cta { background:var(--purple) !important; color:#fff !important; padding:8px 18px; border-radius:6px; font-weight:500 !important; }
+    .nav-cta:hover { opacity:.88; }
+    .lang-toggle { display:flex; border:1px solid var(--bm); border-radius:6px; overflow:hidden; margin-left:4px; }
+    .lang-btn { padding:6px 12px; font-size:12px; font-weight:500; cursor:pointer; background:transparent; color:rgba(255,255,255,0.4); border:none; font-family:var(--fb); transition:all .15s; }
+    .lang-btn.active { background:var(--purple); color:#fff; }
+
+    .metaxium-badge { display:inline-flex; align-items:center; gap:8px; background:rgba(255,255,255,0.05); color:rgba(255,255,255,0.45); font-size:11px; font-weight:500; padding:5px 12px 5px 8px; border-radius:20px; border:1px solid var(--b); text-decoration:none; margin-bottom:24px; transition:border-color .15s; }
+    .metaxium-badge:hover { border-color:var(--bm); color:rgba(255,255,255,0.7); }
+    .metaxium-badge .bi { width:18px; height:18px; border-radius:4px; background:#1E2A4A; display:flex; align-items:center; justify-content:center; }
+    .metaxium-badge .bi svg { width:18px; height:18px; }
+    .metaxium-badge b { color:#5B8DEF; }
+
+    .hero { min-height:100vh; display:flex; flex-direction:column; justify-content:center; padding:120px 5% 80px; position:relative; overflow:hidden; background:radial-gradient(ellipse 70% 60% at 65% 40%, #2D0F5C 0%, #0F0620 65%); }
+    .hero::before { content:''; position:absolute; inset:0; background-image:radial-gradient(circle, rgba(167,139,250,0.09) 1px, transparent 1px); background-size:32px 32px; pointer-events:none; }
+    .hero::after { content:''; position:absolute; left:0; top:0; bottom:0; width:3px; background:linear-gradient(180deg, transparent 0%, var(--purple) 30%, var(--purple) 70%, transparent 100%); }
+    .hero-content { position:relative; z-index:1; max-width:720px; }
+
+    .eyebrow { display:inline-flex; align-items:center; gap:10px; font-size:11px; font-weight:600; letter-spacing:1.4px; text-transform:uppercase; color:var(--light); margin-bottom:28px; }
+    .eyebrow::before { content:''; width:28px; height:1px; background:var(--light); }
+    .hero h1 { font-family:var(--fh); font-size:clamp(34px,6vw,64px); font-weight:700; line-height:1.05; letter-spacing:-2px; margin-bottom:24px; color:#fff; }
+    .hero h1 .accent { color:var(--light); }
+    .hero h1 .dim { color:rgba(255,255,255,0.28); }
+    .hero-sub { font-size:17px; color:rgba(255,255,255,0.48); line-height:1.75; max-width:500px; margin-bottom:44px; font-weight:300; }
+    .hero-btns { display:flex; gap:12px; flex-wrap:wrap; margin-bottom:56px; }
+
+    .btn-purple { display:inline-flex; align-items:center; gap:8px; background:var(--purple); color:#fff; padding:13px 26px; border-radius:6px; font-size:15px; font-weight:500; text-decoration:none; border:none; cursor:pointer; font-family:var(--fb); transition:opacity .15s; }
+    .btn-purple:hover { opacity:.88; }
+    .btn-outline { display:inline-flex; align-items:center; gap:8px; background:transparent; color:rgba(255,255,255,0.6); border:1px solid rgba(255,255,255,0.16); padding:13px 26px; border-radius:6px; font-size:15px; font-weight:400; text-decoration:none; cursor:pointer; font-family:var(--fb); transition:all .15s; }
+    .btn-outline:hover { border-color:rgba(255,255,255,0.4); color:#fff; }
+
+    .hero-stats { display:flex; gap:0; flex-wrap:wrap; }
+    .hstat { padding:0 32px 0 0; margin-right:32px; border-right:1px solid rgba(255,255,255,0.08); }
+    .hstat:last-child { border-right:none; padding-right:0; margin-right:0; }
+    .hstat .n { font-family:var(--fh); font-size:26px; font-weight:700; color:#fff; display:block; letter-spacing:-0.5px; }
+    .hstat .l { font-size:12px; color:rgba(255,255,255,0.3); margin-top:2px; display:block; }
+
+    .section { padding:80px 5%; }
+    .section.dark { background:#13082A; border-top:1px solid var(--b); border-bottom:1px solid var(--b); }
+    .section.dark2 { background:#13082A; border-top:1px solid var(--b); }
+    .section-eyebrow { font-size:11px; font-weight:600; letter-spacing:1px; text-transform:uppercase; color:var(--light); margin-bottom:12px; }
+    .section h2 { font-family:var(--fh); font-size:clamp(24px,4vw,38px); font-weight:700; letter-spacing:-1px; color:#fff; margin-bottom:12px; line-height:1.1; }
+    .section > p { font-size:15px; color:rgba(255,255,255,0.42); line-height:1.75; font-weight:300; max-width:540px; margin-bottom:44px; }
+
+    .services-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:14px; }
+    .scard { background:rgba(255,255,255,0.04); border:1px solid var(--b); border-radius:12px; padding:26px 22px; transition:border-color .2s, background .2s; }
+    .scard:hover { border-color:rgba(167,139,250,0.28); background:rgba(167,139,250,0.05); }
+    .scard-icon { width:42px; height:42px; border-radius:10px; background:#2D0F5C; display:flex; align-items:center; justify-content:center; margin-bottom:14px; }
+    .scard-icon i { color:var(--light); font-size:20px; }
+    .scard h3 { font-family:var(--fh); font-size:15px; font-weight:600; color:#fff; margin-bottom:8px; }
+    .scard p { font-size:13px; color:rgba(255,255,255,0.38); line-height:1.65; }
+
+    .model-cols { display:grid; grid-template-columns:1fr 56px 1fr; align-items:center; margin-bottom:40px; }
+    .model-col { border-radius:12px; padding:26px 22px; border:1px solid var(--b); }
+    .model-col.us { background:rgba(91,33,182,0.12); border-color:rgba(167,139,250,0.22); }
+    .model-col.them { background:rgba(255,255,255,0.03); }
+    .model-col-label { font-size:10px; font-weight:700; letter-spacing:1px; text-transform:uppercase; margin-bottom:14px; }
+    .model-col.us .model-col-label { color:var(--light); }
+    .model-col.them .model-col-label { color:rgba(255,255,255,0.28); }
+    .model-col h3 { font-family:var(--fh); font-size:15px; font-weight:700; color:#fff; margin-bottom:12px; }
+    .model-list { display:flex; flex-direction:column; gap:9px; }
+    .model-item { display:flex; align-items:flex-start; gap:8px; font-size:13px; color:rgba(255,255,255,0.55); line-height:1.5; }
+    .model-item i { font-size:14px; margin-top:2px; flex-shrink:0; }
+    .model-col.us .model-item i { color:var(--light); }
+    .model-col.them .model-item i { color:rgba(255,255,255,0.22); }
+    .model-arrow { display:flex; align-items:center; justify-content:center; color:rgba(255,255,255,0.18); font-size:22px; }
+
+    .contract-box { background:rgba(91,33,182,0.10); border:1px solid rgba(167,139,250,0.18); border-radius:12px; padding:26px 28px; }
+    .contract-box h3 { font-family:var(--fh); font-size:15px; font-weight:700; color:#fff; margin-bottom:18px; }
+    .contract-terms { display:grid; grid-template-columns:repeat(4,1fr); gap:20px; }
+    .contract-term .tv { font-family:var(--fh); font-size:20px; font-weight:700; color:var(--light); display:block; margin-bottom:3px; }
+    .contract-term .tl { font-size:11px; color:rgba(255,255,255,0.32); }
+
+    .client-cards { display:grid; grid-template-columns:repeat(3,1fr); gap:14px; }
+    .ccrd { background:rgba(255,255,255,0.03); border:1px solid var(--b); border-radius:12px; padding:24px 22px; }
+    .ccrd-num { font-family:var(--fh); font-size:28px; font-weight:700; color:var(--purple); margin-bottom:10px; display:block; }
+    .ccrd h4 { font-family:var(--fh); font-size:14px; font-weight:600; color:#fff; margin-bottom:8px; }
+    .ccrd p { font-size:13px; color:rgba(255,255,255,0.38); line-height:1.6; }
+
+    .contact-grid { display:grid; grid-template-columns:1fr 1fr; gap:64px; align-items:center; }
+    .contact-grid > div > p { font-size:15px; color:rgba(255,255,255,0.42); line-height:1.75; font-weight:300; margin-bottom:28px; }
+    .contact-card { background:rgba(91,33,182,0.12); border:1px solid rgba(167,139,250,0.18); border-radius:14px; padding:32px; }
+    .contact-avatar { width:48px; height:48px; border-radius:50%; background:linear-gradient(135deg,var(--purple),#2D0F5C); display:flex; align-items:center; justify-content:center; font-family:var(--fh); font-size:18px; font-weight:700; color:#fff; margin-bottom:16px; }
+    .contact-card h3 { font-family:var(--fh); font-size:16px; font-weight:700; color:#fff; margin-bottom:4px; }
+    .contact-card .role { font-size:12px; color:rgba(255,255,255,0.3); margin-bottom:24px; }
+    .citem { display:flex; align-items:center; gap:12px; padding:12px 0; border-bottom:1px solid var(--b); }
+    .citem:last-child { border-bottom:none; }
+    .citem i { color:var(--light); font-size:16px; flex-shrink:0; }
+    .citem a { font-size:14px; color:rgba(255,255,255,0.55); text-decoration:none; transition:color .15s; }
+    .citem a:hover { color:#fff; }
+    .citem span { font-size:14px; color:rgba(255,255,255,0.3); }
+
+    /* QUALIFYING FORM */
+    .qform-wrap { max-width:640px; }
+    .qform-branch { display:grid; grid-template-columns:1fr 1fr; gap:14px; }
+    .qb-card { background:rgba(255,255,255,0.04); border:1px solid var(--b); border-radius:12px; padding:28px 24px; cursor:pointer; transition:border-color .2s, background .2s, transform .2s; }
+    .qb-card:hover { border-color:rgba(167,139,250,0.4); background:rgba(167,139,250,0.07); transform:translateY(-2px); }
+    .qb-icon { width:42px; height:42px; border-radius:10px; background:#2D0F5C; display:flex; align-items:center; justify-content:center; margin-bottom:16px; }
+    .qb-icon i { color:var(--light); font-size:20px; }
+    .qb-card h3 { font-family:var(--fh); font-size:16px; font-weight:700; color:#fff; margin-bottom:8px; }
+    .qb-card p { font-size:13px; color:rgba(255,255,255,0.42); line-height:1.6; margin-bottom:16px; }
+    .qb-link { font-size:12px; font-weight:600; color:var(--light); }
+
+    .qform-redirect, .qform-seeker, .qform-success { display:none; background:rgba(255,255,255,0.03); border:1px solid var(--b); border-radius:14px; padding:36px; }
+    .qform-redirect.visible, .qform-seeker.visible, .qform-success.visible { display:block; }
+    .qr-icon { width:48px; height:48px; border-radius:50%; background:#2D0F5C; display:flex; align-items:center; justify-content:center; margin-bottom:18px; }
+    .qr-icon i { color:var(--light); font-size:22px; }
+    .qform-redirect h3 { font-family:var(--fh); font-size:18px; font-weight:700; color:#fff; margin-bottom:10px; }
+    .qform-redirect p { font-size:14px; color:rgba(255,255,255,0.45); line-height:1.7; margin-bottom:24px; max-width:440px; }
+    .qr-back { background:none; border:none; color:rgba(255,255,255,0.4); font-size:13px; cursor:pointer; font-family:var(--fb); display:inline-flex; align-items:center; gap:6px; margin-top:18px; padding:0; transition:color .15s; }
+    .qr-back:hover { color:#fff; }
+
+    .qform-seeker .field { margin-bottom:18px; }
+    .qform-seeker .field label { display:block; font-size:12px; font-weight:500; color:rgba(255,255,255,0.5); margin-bottom:7px; }
+    .qform-seeker .field input, .qform-seeker .field select, .qform-seeker .field textarea {
+      width:100%; padding:11px 14px; border:1px solid var(--bm); border-radius:6px; font-family:var(--fb); font-size:14px; color:#fff;
+      background:rgba(255,255,255,0.04); outline:none; transition:border-color .15s;
+    }
+    .qform-seeker .field select { background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%23A78BFA' stroke-width='2'%3E%3Cpolyline points='6 9 12 15 18 9'/%3E%3C/svg%3E"); background-repeat:no-repeat; background-position:right 12px center; appearance:none; -webkit-appearance:none; }
+    .qform-seeker .field select option { background:#1A0A3A; color:#fff; }
+    .qform-seeker .field input:focus, .qform-seeker .field select:focus, .qform-seeker .field textarea:focus { border-color:var(--light); }
+    .qform-seeker .field textarea { min-height:80px; resize:vertical; }
+    .qform-seeker .field-row { display:grid; grid-template-columns:1fr 1fr; gap:14px; }
+    .qform-seeker .chips { display:flex; flex-wrap:wrap; gap:8px; margin-top:6px; }
+    .qform-seeker .chip {
+      padding:7px 16px; border:1px solid var(--bm); border-radius:20px; font-size:13px; cursor:pointer;
+      background:rgba(255,255,255,0.03); color:rgba(255,255,255,0.55); font-family:var(--fb); transition:all .15s; user-select:none;
+    }
+    .qform-seeker .chip:hover { border-color:var(--light); color:#fff; }
+    .qform-seeker .chip.sel { background:rgba(167,139,250,0.18); border-color:var(--light); color:var(--light); font-weight:500; }
+    .qform-footer { display:flex; justify-content:space-between; align-items:center; margin-top:8px; }
+
+    .qform-success { text-align:center; }
+    .qs-icon { width:56px; height:56px; border-radius:50%; background:rgba(167,139,250,0.15); display:flex; align-items:center; justify-content:center; margin:0 auto 18px; }
+    .qs-icon i { color:var(--light); font-size:26px; }
+    .qform-success h3 { font-family:var(--fh); font-size:18px; font-weight:700; color:#fff; margin-bottom:10px; }
+    .qform-success p { font-size:14px; color:rgba(255,255,255,0.45); line-height:1.7; max-width:380px; margin:0 auto; }
+
+    footer { padding:24px 5%; border-top:1px solid var(--b); display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:14px; }
+    .footer-left { display:flex; align-items:center; gap:22px; flex-wrap:wrap; }
+    .footer-logo { display:flex; align-items:center; gap:8px; text-decoration:none; }
+    .footer-logo-icon { width:24px; height:24px; border-radius:5px; background:#2D0F5C; display:flex; align-items:center; justify-content:center; }
+    .footer-logo-icon svg { width:24px; height:24px; }
+    .footer-wm { font-family:var(--fh); font-size:14px; font-weight:700; color:rgba(255,255,255,0.45); }
+    .footer-wm .x { color:var(--light); }
+    .footer-links { display:flex; gap:16px; flex-wrap:wrap; }
+    .footer-links a { font-size:12px; color:rgba(255,255,255,0.25); text-decoration:none; transition:color .15s; }
+    .footer-links a:hover { color:rgba(255,255,255,0.55); }
+    footer p { font-size:11px; color:rgba(255,255,255,0.18); }
+
+    @media(max-width:768px) {
+      .services-grid,.client-cards { grid-template-columns:1fr; }
+      .model-cols { grid-template-columns:1fr; }
+      .model-arrow { transform:rotate(90deg); padding:8px 0; }
+      .contract-terms { grid-template-columns:1fr 1fr; }
+      .contact-grid { grid-template-columns:1fr; gap:40px; }
+      .nav-right a:not(.nav-cta):not(.lang-btn) { display:none; }
+    }
+  </style>
+</head>
+<body>
+
+<nav>
+  <a href="#" class="nav-logo">
+    <div class="nav-logo-icon">
+      <svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
+        <line x1="8" y1="8" x2="24" y2="24" stroke="#A78BFA" stroke-width="4" stroke-linecap="round"/>
+        <line x1="24" y1="8" x2="8" y2="24" stroke="#ffffff" stroke-width="4" stroke-linecap="round"/>
+      </svg>
+    </div>
+    <span class="nav-wordmark">MetaX<span class="x">Agora</span></span>
+  </a>
+  <div class="nav-right">
+    <a href="#services" data-en="What we provide" data-es="Qué ofrecemos">What we provide</a>
+    <a href="#model" data-en="The model" data-es="El modelo">The model</a>
+    <a href="#contact" class="nav-cta" data-en="Request a brief" data-es="Contactar">Request a brief</a>
+    <div class="lang-toggle">
+      <button class="lang-btn active" onclick="setLang('en')">EN</button>
+      <button class="lang-btn" onclick="setLang('es')">ES</button>
+    </div>
+  </div>
+</nav>
+
+<section class="hero">
+  <div class="hero-content">
+    <a href="https://www.metaxium.com" class="metaxium-badge" target="_blank" rel="noopener">
+      <div class="bi">
+        <svg viewBox="0 0 18 18" xmlns="http://www.w3.org/2000/svg">
+          <line x1="4" y1="4" x2="14" y2="14" stroke="#5B8DEF" stroke-width="2.5" stroke-linecap="round"/>
+          <line x1="14" y1="4" x2="4" y2="14" stroke="#ffffff" stroke-width="2.5" stroke-linecap="round"/>
+        </svg>
+      </div>
+      <span data-en="Part of " data-es="Parte de ">Part of </span><b>Meta<b style="color:#5B8DEF">X</b>ium</b> Group
+    </a>
+    <div class="eyebrow" data-en="Compute Infrastructure · Mexico" data-es="Infraestructura de Cómputo · México">Compute Infrastructure · Mexico</div>
+    <h1>
+      <span data-en="Your servers." data-es="Tus servidores.">Your servers.</span><br>
+      <span class="accent" data-en="Our infrastructure." data-es="Nuestra infraestructura.">Our infrastructure.</span><br>
+      <span class="dim" data-en="Ready when you are." data-es="Listos cuando tú lo estés.">Ready when you are.</span>
+    </h1>
+    <p class="hero-sub" data-en="MetaXAgora provides wholesale colocation infrastructure in Mexico — guaranteed power, connectivity, cooling and physical security. You bring the hardware. We run the facility." data-es="MetaXAgora provee infraestructura de colocation mayorista en México — potencia garantizada, conectividad, refrigeración y seguridad física. Tú traes el hardware. Nosotros gestionamos la instalación.">
+      MetaXAgora provides wholesale colocation infrastructure in Mexico — guaranteed power, connectivity, cooling and physical security. You bring the hardware. We run the facility.
+    </p>
+    <div class="hero-btns">
+      <a href="#contact" class="btn-purple">
+        <i class="ti ti-file-description"></i>
+        <span data-en="Request a brief" data-es="Solicitar información">Request a brief</span>
+      </a>
+      <a href="#model" class="btn-outline">
+        <i class="ti ti-info-circle"></i>
+        <span data-en="How it works" data-es="Cómo funciona">How it works</span>
+      </a>
+    </div>
+    <div class="hero-stats">
+      <div class="hstat"><span class="n">99.9%</span><span class="l" data-en="Uptime SLA" data-es="SLA de disponibilidad">Uptime SLA</span></div>
+      <div class="hstat"><span class="n">USD</span><span class="l" data-en="Contract currency" data-es="Divisa del contrato">Contract currency</span></div>
+      <div class="hstat"><span class="n">5–10 yr</span><span class="l" data-en="Contract terms" data-es="Plazo del contrato">Contract terms</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="section dark" id="services">
+  <div class="section-eyebrow" data-en="What we provide" data-es="Qué ofrecemos">What we provide</div>
+  <h2 data-en="The facility. Nothing more, nothing less." data-es="La instalación. Nada más, nada menos.">The facility. Nothing more, nothing less.</h2>
+  <p data-en="We are infrastructure landlords. We provide the physical layer so your team can focus on what runs inside it. No IT services, no managed cloud — pure facility." data-es="Somos propietarios de infraestructura. Proveemos la capa física para que tu equipo se concentre en lo que corre dentro. Sin servicios IT, sin cloud gestionado — instalación pura.">
+    We are infrastructure landlords. We provide the physical layer so your team can focus on what runs inside it. No IT services, no managed cloud — pure facility.
+  </p>
+  <div class="services-grid">
+    <div class="scard">
+      <div class="scard-icon"><i class="ti ti-bolt"></i></div>
+      <h3 data-en="Guaranteed power" data-es="Potencia garantizada">Guaranteed power</h3>
+      <p data-en="Reserved capacity in kW. You pay for what you commit, not what you consume. Diesel backup N+1 with automatic transfer in under 10 seconds." data-es="Capacidad reservada en kW. Pagas por lo que comprometes, no por lo que consumes. Backup diésel N+1 con transferencia automática en menos de 10 segundos.">Reserved capacity in kW. You pay for what you commit, not what you consume. Diesel backup N+1 with automatic transfer in under 10 seconds.</p>
+    </div>
+    <div class="scard">
+      <div class="scard-icon"><i class="ti ti-network"></i></div>
+      <h3 data-en="Carrier-neutral connectivity" data-es="Conectividad carrier-neutral">Carrier-neutral connectivity</h3>
+      <p data-en="Meet-me room with a minimum of two independent fiber carriers. You choose your ISP. We provide the passive infrastructure and the interconnection point." data-es="Meet-me room con mínimo dos carriers de fibra independientes. Tú eliges tu ISP. Nosotros proveemos la infraestructura pasiva y el punto de interconexión.">Meet-me room with a minimum of two independent fiber carriers. You choose your ISP. We provide the passive infrastructure and the interconnection point.</p>
+    </div>
+    <div class="scard">
+      <div class="scard-icon"><i class="ti ti-snowflake"></i></div>
+      <h3 data-en="Precision cooling" data-es="Refrigeración de precisión">Precision cooling</h3>
+      <p data-en="CRAH units maintaining 18–27°C and 40–60% RH per ASHRAE A1. Designed for the density you need — standard racks to high-density rows." data-es="Unidades CRAH manteniendo 18–27°C y 40–60% HR según ASHRAE A1. Diseñado para la densidad que necesitas — racks estándar hasta filas de alta densidad.">CRAH units maintaining 18–27°C and 40–60% RH per ASHRAE A1. Designed for the density you need — standard racks to high-density rows.</p>
+    </div>
+    <div class="scard">
+      <div class="scard-icon"><i class="ti ti-shield-lock"></i></div>
+      <h3 data-en="Physical security" data-es="Seguridad física">Physical security</h3>
+      <p data-en="Biometric and RFID access control, CCTV on every aisle, mantrap entry, perimeter fencing and 24/7 on-site security personnel." data-es="Control de acceso biométrico y RFID, CCTV en cada pasillo, mantrap en la entrada, valla perimetral y personal de seguridad en sitio 24/7.">Biometric and RFID access control, CCTV on every aisle, mantrap entry, perimeter fencing and 24/7 on-site security personnel.</p>
+    </div>
+    <div class="scard">
+      <div class="scard-icon"><i class="ti ti-activity"></i></div>
+      <h3 data-en="24/7 facility monitoring" data-es="Monitorización 24/7">24/7 facility monitoring</h3>
+      <p data-en="Round-the-clock monitoring of power, temperature, humidity and access. NOC alerts and remote hands available on request." data-es="Monitorización permanente de potencia, temperatura, humedad y acceso. Alertas NOC y remote hands disponibles bajo pedido.">Round-the-clock monitoring of power, temperature, humidity and access. NOC alerts and remote hands available on request.</p>
+    </div>
+    <div class="scard">
+      <div class="scard-icon"><i class="ti ti-tool"></i></div>
+      <h3 data-en="Remote hands" data-es="Remote hands">Remote hands</h3>
+      <p data-en="On-site technical support for physical tasks — cable management, hardware swap, visual inspection. Billed by the hour, available 24/7." data-es="Soporte técnico en sitio para tareas físicas — gestión de cableado, cambio de hardware, inspección visual. Facturado por hora, disponible 24/7.">On-site technical support for physical tasks — cable management, hardware swap, visual inspection. Billed by the hour, available 24/7.</p>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="model">
+  <div class="section-eyebrow" data-en="The model" data-es="El modelo">The model</div>
+  <h2 data-en="Clear boundaries. Simple contract." data-es="Límites claros. Contrato sencillo.">Clear boundaries. Simple contract.</h2>
+  <p data-en="We define exactly what we deliver and what you bring. No ambiguity, no scope creep. The contract reflects this boundary precisely." data-es="Definimos exactamente qué entregamos y qué traes tú. Sin ambigüedad, sin desviación del alcance. El contrato refleja este límite con precisión.">
+    We define exactly what we deliver and what you bring. No ambiguity, no scope creep. The contract reflects this boundary precisely.
+  </p>
+  <div class="model-cols">
+    <div class="model-col us">
+      <div class="model-col-label" data-en="MetaXAgora provides" data-es="MetaXAgora provee">MetaXAgora provides</div>
+      <h3 data-en="The physical layer" data-es="La capa física">The physical layer</h3>
+      <div class="model-list">
+        <div class="model-item"><i class="ti ti-circle-check"></i><span data-en="Building, raised floor, hot/cold aisle containment" data-es="Edificio, suelo técnico, contención de pasillos">Building, raised floor, hot/cold aisle containment</span></div>
+        <div class="model-item"><i class="ti ti-circle-check"></i><span data-en="Power to the PDU at your rack" data-es="Potencia hasta la PDU en tu rack">Power to the PDU at your rack</span></div>
+        <div class="model-item"><i class="ti ti-circle-check"></i><span data-en="Diesel generator backup N+1" data-es="Backup de generadores diésel N+1">Diesel generator backup N+1</span></div>
+        <div class="model-item"><i class="ti ti-circle-check"></i><span data-en="Precision cooling to ASHRAE A1" data-es="Refrigeración de precisión según ASHRAE A1">Precision cooling to ASHRAE A1</span></div>
+        <div class="model-item"><i class="ti ti-circle-check"></i><span data-en="Fiber access to meet-me room" data-es="Acceso de fibra al meet-me room">Fiber access to meet-me room</span></div>
+        <div class="model-item"><i class="ti ti-circle-check"></i><span data-en="Physical security 24/7" data-es="Seguridad física 24/7">Physical security 24/7</span></div>
+        <div class="model-item"><i class="ti ti-circle-check"></i><span data-en="99.9% uptime SLA with credit mechanism" data-es="SLA de disponibilidad 99,9% con mecanismo de crédito">99.9% uptime SLA with credit mechanism</span></div>
+      </div>
+    </div>
+    <div class="model-arrow"><i class="ti ti-arrows-exchange"></i></div>
+    <div class="model-col them">
+      <div class="model-col-label" data-en="You bring" data-es="Tú aportas">You bring</div>
+      <h3 data-en="Your IT stack" data-es="Tu stack IT">Your IT stack</h3>
+      <div class="model-list">
+        <div class="model-item"><i class="ti ti-minus"></i><span data-en="Your own servers and hardware" data-es="Tus propios servidores y hardware">Your own servers and hardware</span></div>
+        <div class="model-item"><i class="ti ti-minus"></i><span data-en="Your network switches and routers" data-es="Tus switches y routers de red">Your network switches and routers</span></div>
+        <div class="model-item"><i class="ti ti-minus"></i><span data-en="Your internet and WAN contracts" data-es="Tus contratos de internet y WAN">Your internet and WAN contracts</span></div>
+        <div class="model-item"><i class="ti ti-minus"></i><span data-en="Your IT team and software stack" data-es="Tu equipo IT y stack de software">Your IT team and software stack</span></div>
+        <div class="model-item"><i class="ti ti-minus"></i><span data-en="Your backup and DR strategy" data-es="Tu estrategia de backup y DR">Your backup and DR strategy</span></div>
+      </div>
+    </div>
+  </div>
+  <div class="contract-box">
+    <h3 data-en="Wholesale lease — standard terms" data-es="Arrendamiento mayorista — términos estándar">Wholesale lease — standard terms</h3>
+    <div class="contract-terms">
+      <div class="contract-term"><span class="tv" data-en="kW reserved" data-es="kW reservados">kW reserved</span><span class="tl" data-en="Billing unit — not kWh consumed" data-es="Unidad de facturación — no kWh consumidos">Billing unit — not kWh consumed</span></div>
+      <div class="contract-term"><span class="tv">USD</span><span class="tl" data-en="Contract currency — FX protected" data-es="Divisa del contrato — protección cambiaria">Contract currency — FX protected</span></div>
+      <div class="contract-term"><span class="tv">5–10 yr</span><span class="tl" data-en="Contract term — with renewal option" data-es="Plazo del contrato — con opción de renovación">Contract term — with renewal option</span></div>
+      <div class="contract-term"><span class="tv">CPI+1%</span><span class="tl" data-en="Annual escalation — or 3% fixed" data-es="Escalación anual — o 3% fijo">Annual escalation — or 3% fixed</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="section dark2" id="who">
+  <div class="section-eyebrow" data-en="Who is this for" data-es="Para quién es">Who is this for</div>
+  <h2 data-en="Three client profiles." data-es="Tres perfiles de cliente.">Three client profiles.</h2>
+  <p data-en="Any organization that needs physical IT infrastructure in Mexico without the capital, complexity or distraction of building and operating their own facility." data-es="Cualquier organización que necesite infraestructura IT física en México sin el capital, la complejidad ni la distracción de construir y operar su propia instalación.">
+    Any organization that needs physical IT infrastructure in Mexico without the capital, complexity or distraction of building and operating their own facility.
+  </p>
+  <div class="client-cards">
+    <div class="ccrd">
+      <span class="ccrd-num">01</span>
+      <h4 data-en="Enterprise with IT infrastructure needs" data-es="Enterprise con necesidades de infraestructura IT">Enterprise with IT infrastructure needs</h4>
+      <p data-en="Manufacturing, financial institutions, healthcare, retail — any organization needing local data residency in Mexico without building their own facility." data-es="Manufactura, instituciones financieras, salud, retail — cualquier organización que necesite residencia de datos local en México sin construir su propia instalación.">Manufacturing, financial institutions, healthcare, retail — any organization needing local data residency in Mexico without building their own facility.</p>
+    </div>
+    <div class="ccrd">
+      <span class="ccrd-num">02</span>
+      <h4 data-en="Cloud and AI players needing capacity" data-es="Operadores cloud e IA que necesitan capacidad">Cloud and AI players needing capacity</h4>
+      <p data-en="Hyperscalers and neoclouds with large projects stuck in grid queues. MetaXAgora provides operational capacity while their own infrastructure comes online." data-es="Hyperscalers y neoclouds con grandes proyectos atascados en colas de red. MetaXAgora provee capacidad operativa mientras su propia infraestructura entra en línea.">Hyperscalers and neoclouds with large projects stuck in grid queues. MetaXAgora provides operational capacity while their own infrastructure comes online.</p>
+    </div>
+    <div class="ccrd">
+      <span class="ccrd-num">03</span>
+      <h4 data-en="Colocation operators expanding regionally" data-es="Operadores de colocation en expansión regional">Colocation operators expanding regionally</h4>
+      <p data-en="Established operators who want a presence in a new Mexican market without the full development burden. They operate within our shell and serve their own clients." data-es="Operadores consolidados que quieren presencia en un nuevo mercado mexicano sin la carga completa de desarrollo. Operan dentro de nuestra instalación y sirven a sus propios clientes.">Established operators who want a presence in a new Mexican market without the full development burden. They operate within our shell and serve their own clients.</p>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="contact">
+  <div class="section-eyebrow" data-en="Get in touch" data-es="Contacto">Get in touch</div>
+  <h2 data-en="Tell us what you need." data-es="Cuéntanos qué necesitas.">Tell us what you need.</h2>
+  <p data-en="Two minutes. We'll route you to the right next step." data-es="Dos minutos. Te dirigimos al siguiente paso correcto.">Two minutes. We'll route you to the right next step.</p>
+
+  <div class="qform-wrap">
+    <!-- BRANCH SELECTOR -->
+    <div class="qform-branch" id="qbranch">
+      <div class="qb-card" onclick="selectBranch('owner')">
+        <div class="qb-icon"><i class="ti ti-map-pin"></i></div>
+        <h3 data-en="I own land" data-es="Tengo un terreno">I own land</h3>
+        <p data-en="You have a site and want to know if it's a fit for infrastructure development." data-es="Tienes un predio y quieres saber si encaja para desarrollo de infraestructura.">You have a site and want to know if it's a fit for infrastructure development.</p>
+        <span class="qb-link" data-en="Go to MetaXTerra →" data-es="Ir a MetaXTerra →">Go to MetaXTerra →</span>
+      </div>
+      <div class="qb-card" onclick="selectBranch('seeker')">
+        <div class="qb-icon"><i class="ti ti-server"></i></div>
+        <h3 data-en="I need capacity" data-es="Necesito capacidad">I need capacity</h3>
+        <p data-en="You're an enterprise, cloud player or colocation operator looking for guaranteed power and space." data-es="Eres una empresa, operador cloud o de colocation buscando potencia y espacio garantizados.">You're an enterprise, cloud player or colocation operator looking for guaranteed power and space.</p>
+        <span class="qb-link" data-en="Continue below ↓" data-es="Continuar abajo ↓">Continue below ↓</span>
+      </div>
+    </div>
+
+    <!-- OWNER REDIRECT NOTICE -->
+    <div class="qform-redirect" id="qredirect">
+      <div class="qr-icon"><i class="ti ti-map-pin"></i></div>
+      <h3 data-en="MetaXTerra handles land submissions" data-es="MetaXTerra gestiona la evaluación de terrenos">MetaXTerra handles land submissions</h3>
+      <p data-en="MetaXAgora is the compute capacity marketplace. For land evaluation, our sister company MetaXTerra has a dedicated 5-minute assessment form." data-es="MetaXAgora es el marketplace de capacidad de cómputo. Para evaluar tu terreno, nuestra empresa hermana MetaXTerra tiene un formulario de evaluación de 5 minutos.">MetaXAgora is the compute capacity marketplace. For land evaluation, our sister company MetaXTerra has a dedicated 5-minute assessment form.</p>
+      <a href="https://www.metaxterra.com/#cuestionario" class="btn-purple">
+        <i class="ti ti-arrow-right"></i> <span data-en="Go to land assessment" data-es="Ir a evaluación de terreno">Go to land assessment</span>
+      </a>
+      <button class="qr-back" onclick="resetBranch()"><i class="ti ti-arrow-left"></i> <span data-en="Back" data-es="Volver">Back</span></button>
+    </div>
+
+    <!-- SEEKER FORM -->
+    <div class="qform-seeker" id="qseeker">
+      <div class="field">
+        <label data-en="What type of organization are you? *" data-es="¿Qué tipo de organización eres? *">What type of organization are you? *</label>
+        <div class="chips" id="g-type">
+          <div class="chip" onclick="pick(this)" data-en="Enterprise / corporate IT" data-es="Empresa / IT corporativo">Enterprise / corporate IT</div>
+          <div class="chip" onclick="pick(this)" data-en="Cloud / AI / hyperscaler" data-es="Cloud / IA / hyperscaler">Cloud / AI / hyperscaler</div>
+          <div class="chip" onclick="pick(this)" data-en="Colocation operator" data-es="Operador de colocation">Colocation operator</div>
+          <div class="chip" onclick="pick(this)" data-en="Investor / fund" data-es="Inversor / fondo">Investor / fund</div>
+          <div class="chip" onclick="pick(this)" data-en="Other" data-es="Otro">Other</div>
+        </div>
+      </div>
+      <div class="field">
+        <label data-en="What are you looking for? *" data-es="¿Qué estás buscando? *">What are you looking for? *</label>
+        <div class="chips" id="g-need">
+          <div class="chip" onclick="pick(this)" data-en="Guaranteed capacity now" data-es="Capacidad garantizada ya">Guaranteed capacity now</div>
+          <div class="chip" onclick="pick(this)" data-en="Bridge capacity while my project is delayed" data-es="Capacidad puente mientras mi proyecto se retrasa">Bridge capacity while my project is delayed</div>
+          <div class="chip" onclick="pick(this)" data-en="Long-term colocation (5–10 yr)" data-es="Colocation a largo plazo (5–10 años)">Long-term colocation (5–10 yr)</div>
+          <div class="chip" onclick="pick(this)" data-en="Just exploring options" data-es="Solo explorando opciones">Just exploring options</div>
+        </div>
+      </div>
+      <div class="field-row">
+        <div class="field">
+          <label data-en="Capacity needed (kW or MW)" data-es="Capacidad necesaria (kW o MW)">Capacity needed (kW or MW)</label>
+          <input type="text" id="f-cap" data-ph-en="E.g. 2 MW" data-ph-es="Ej. 2 MW" placeholder="E.g. 2 MW"/>
+        </div>
+        <div class="field">
+          <label data-en="Timeline" data-es="Plazo">Timeline</label>
+          <select id="f-timeline">
+            <option value="" data-en="Select…" data-es="Selecciona…">Select…</option>
+            <option data-en="Immediate (0–6 months)" data-es="Inmediato (0–6 meses)">Immediate (0–6 months)</option>
+            <option data-en="Near-term (6–12 months)" data-es="Corto plazo (6–12 meses)">Near-term (6–12 months)</option>
+            <option data-en="Planning (12+ months)" data-es="En planificación (12+ meses)">Planning (12+ months)</option>
+          </select>
+        </div>
+      </div>
+      <div class="field-row">
+        <div class="field">
+          <label data-en="Full name *" data-es="Nombre completo *">Full name *</label>
+          <input type="text" id="f-name" data-ph-en="Your name" data-ph-es="Tu nombre" placeholder="Your name"/>
+        </div>
+        <div class="field">
+          <label data-en="Company" data-es="Empresa">Company</label>
+          <input type="text" id="f-company" data-ph-en="Company name" data-ph-es="Nombre de la empresa" placeholder="Company name"/>
+        </div>
+      </div>
+      <div class="field">
+        <label data-en="Email *" data-es="Correo electrónico *">Email *</label>
+        <input type="email" id="f-semail" data-ph-en="name@company.com" data-ph-es="nombre@empresa.com" placeholder="name@company.com"/>
+      </div>
+      <div class="field">
+        <label data-en="Anything else we should know?" data-es="¿Algo más que debamos saber?">Anything else we should know?</label>
+        <textarea id="f-snotes" data-ph-en="Location preferences, technical requirements, etc." data-ph-es="Preferencias de ubicación, requisitos técnicos, etc." placeholder="Location preferences, technical requirements, etc."></textarea>
+      </div>
+      <div class="qform-footer">
+        <button class="qr-back" onclick="resetBranch()"><i class="ti ti-arrow-left"></i> <span data-en="Back" data-es="Volver">Back</span></button>
+        <button class="btn-purple" id="btn-seeker-submit" onclick="submitSeeker()" style="border:none;cursor:pointer">
+          <i class="ti ti-send"></i> <span data-en="Request a brief" data-es="Solicitar información">Request a brief</span>
+        </button>
+      </div>
+    </div>
+
+    <!-- SUCCESS -->
+    <div class="qform-success" id="qsuccess">
+      <div class="qs-icon"><i class="ti ti-circle-check"></i></div>
+      <h3 data-en="Received, thank you" data-es="Recibido, gracias">Received, thank you</h3>
+      <p data-en="We'll review your request and reach out within 2–3 business days." data-es="Revisaremos tu solicitud y te contactaremos en 2–3 días hábiles.">We'll review your request and reach out within 2–3 business days.</p>
+    </div>
+  </div>
+
+  <div class="contact-card" style="margin-top:32px;max-width:400px">
+    <div class="contact-avatar">JA</div>
+    <h3>Juan Abarca</h3>
+    <div class="role" data-en="Founder · Metaxium Group" data-es="Fundador · Metaxium Group">Founder · Metaxium Group</div>
+    <div class="citem"><i class="ti ti-mail"></i><a href="mailto:juan.abarca@jsa.global?subject=Metaxium%20Group%20--%20Inquiry">contact@metaxium.com</a></div>
+    <div class="citem"><i class="ti ti-world"></i><a href="https://www.metaxium.com" target="_blank">metaxium.com</a></div>
+    <div class="citem"><i class="ti ti-map-pin"></i><span data-en="Mexico City · Madrid" data-es="Ciudad de México · Madrid">Mexico City · Madrid</span></div>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-left">
+    <a href="#" class="footer-logo">
+      <div class="footer-logo-icon">
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <line x1="6" y1="6" x2="18" y2="18" stroke="#A78BFA" stroke-width="3" stroke-linecap="round"/>
+          <line x1="18" y1="6" x2="6" y2="18" stroke="#ffffff" stroke-width="3" stroke-linecap="round"/>
+        </svg>
+      </div>
+      <span class="footer-wm">MetaX<span class="x">Agora</span></span>
+    </a>
+    <div class="footer-links">
+      <a href="https://www.metaxium.com" data-en="Metaxium Group" data-es="Metaxium Group">Metaxium Group</a>
+      <a href="https://www.metaxterra.com">MetaXTerra</a>
+      <a href="https://www.metaxvolt.com">MetaXVolt</a>
+      <a href="mailto:juan.abarca@jsa.global?subject=Metaxium%20Group%20--%20Inquiry" data-en="Contact" data-es="Contacto">Contact</a>
+    </div>
+  </div>
+  <p>© 2025 MetaXAgora · Metaxium Group · Mexico</p>
+</footer>
+
+<script>
+var lang='en';
+function setLang(l){
+  lang=l;
+  document.documentElement.lang=l;
+  document.querySelectorAll('.lang-btn').forEach(function(b){b.classList.toggle('active',b.textContent.toLowerCase()===l);});
+  document.querySelectorAll('[data-'+l+']').forEach(function(el){
+    var val=el.getAttribute('data-'+l);
+    if(!val)return;
+    if(el.tagName==='INPUT'||el.tagName==='TEXTAREA'){el.placeholder=val;return;}
+    if(el.tagName==='OPTION')return;
+    el.innerHTML=val;
+  });
+}
+
+function selectBranch(type){
+  document.getElementById('qbranch').style.display='none';
+  if(type==='owner'){
+    document.getElementById('qredirect').classList.add('visible');
+  } else {
+    document.getElementById('qseeker').classList.add('visible');
+  }
+}
+
+function resetBranch(){
+  document.getElementById('qredirect').classList.remove('visible');
+  document.getElementById('qseeker').classList.remove('visible');
+  document.getElementById('qbranch').style.display='grid';
+}
+
+function pick(el){
+  el.parentNode.querySelectorAll('.chip').forEach(function(c){c.classList.remove('sel');});
+  el.classList.add('sel');
+}
+
+function getChip(groupId){
+  var sel=document.querySelector('#'+groupId+' .chip.sel');
+  return sel?sel.textContent.trim():'—';
+}
+
+function submitSeeker(){
+  var type=getChip('g-type');
+  var need=getChip('g-need');
+  var cap=document.getElementById('f-cap').value.trim();
+  var timeline=document.getElementById('f-timeline').value;
+  var name=document.getElementById('f-name').value.trim();
+  var company=document.getElementById('f-company').value.trim();
+  var email=document.getElementById('f-semail').value.trim();
+  var notes=document.getElementById('f-snotes').value.trim();
+
+  if(!name||!email){
+    alert(lang==='es'?'Por favor completa nombre y correo.':'Please fill in name and email.');
+    return;
+  }
+
+  var btn=document.getElementById('btn-seeker-submit');
+  btn.disabled=true;
+  btn.innerHTML='<span>'+(lang==='es'?'Enviando…':'Sending…')+'</span>';
+
+  var payload={
+    _subject: '[MetaXAgora] Capacity inquiry — '+name+(company?' — '+company:''),
+    'Organization type': type,
+    'What they need': need,
+    'Capacity needed': cap||'—',
+    'Timeline': timeline||'—',
+    'Full name': name,
+    'Company': company||'—',
+    'Email': email,
+    'Notes': notes||'—',
+    _captcha: 'false',
+    _template: 'table'
+  };
+
+  fetch('https://formsubmit.co/ajax/juan.abarca@jsa.global', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+    body: JSON.stringify(payload)
+  })
+  .then(function(r){ return r.json(); })
+  .then(function(){ showQSuccess(); })
+  .catch(function(){ showQSuccess(); });
+}
+
+function showQSuccess(){
+  document.getElementById('qseeker').classList.remove('visible');
+  document.getElementById('qsuccess').classList.add('visible');
+}
+</script>
+</body>
+</html>
